@@ -1,0 +1,25 @@
+name: release
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  publish:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v7
+      - name: setup python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.14'
+      - name: pack
+        run: python .github/workflows/script/pack.py
+      - name: publish
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: ${{ github.event.release.tag_name }}
+          files: '*.zip'
