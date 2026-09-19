@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:obsidian",
+    "B": "minecraft:ender_eye",
+    "C": "minecraft:heavy_core",
+    "D": "minecraft:end_stone"
+  },
+  "pattern": [
+    "ABA",
+    "ACA",
+    "DDD"
+  ],
+  "result": {
+    "id": "minecraft:end_portal_frame"
+  }
+}
